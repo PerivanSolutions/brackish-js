@@ -1,8 +1,29 @@
 (function() {
   'use strict';
-  var texts = document.getElementsByClassName('js-rotate__content');
-  window.setInterval(function() {
-    texts[0].parentNode.insertBefore(
-        texts[0], texts[texts.length - 1].nextSibling);
-  }, 8000);
+  var rotateInterval,
+      rotate,
+      rotateForward,
+      rotateBackward,
+      contents = document.getElementsByClassName('js-rotate__content');
+
+  rotateForward = function rotateForward() {
+    contents[0].parentNode.appendChild(contents[0]);
+  };
+
+  rotateBackward = function rotateBackward() {
+    contents[0].parentNode.insertBefore(
+        contents[contents.length - 1], contents[0]);
+  };
+
+  rotate = function rotate() {
+    window.clearInterval(rotateInterval);
+    rotateInterval = window.setInterval(rotateForward, 8000);
+    return rotateInterval;
+  };
+
+  rotate();
+
+  window.rotateForward = rotateForward;
+  window.rotateBackward = rotateBackward;
+>>>>>>> Rotate: break into funcs. rotateBackward
 }());
