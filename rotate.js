@@ -22,8 +22,4 @@
   };
 
   rotate();
-
-  window.rotateForward = rotateForward;
-  window.rotateBackward = rotateBackward;
->>>>>>> Rotate: break into funcs. rotateBackward
 }());
