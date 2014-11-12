@@ -1,4 +1,5 @@
 (function() {
+  'use strict';
   var texts = document.getElementsByClassName('js-rotate__content');
   window.setInterval(function() {
     texts[0].parentNode.insertBefore(
