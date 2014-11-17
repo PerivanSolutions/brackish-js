@@ -21,5 +21,5 @@
     return rotateInterval;
   };
 
-  autoRotate();
+  if (contents) { autoRotate(); }
 }());
