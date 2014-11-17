@@ -14,7 +14,7 @@
     nodes[0].parentNode.insertBefore(nodes[nodes.length - 1], nodes[0]);
   };
 
-  autoRotate = function rotate() {
+  autoRotate = function autoRotate() {
     window.clearInterval(rotateInterval);
     rotateInterval =
       window.setInterval(function() { rotateForward(contents); }, 8000);
