@@ -4,7 +4,7 @@
       autoRotate,
       rotateForward,
       rotateBackward,
-      contents = document.getElementsByClassName('js-rotate__content');
+      els = document.getElementsByClassName('js-rotate__content');
 
   rotateForward = function rotateForward(nodes) {
     nodes[0].parentNode.appendChild(nodes[0]);
@@ -23,9 +23,9 @@
   autoRotate = function autoRotate() {
     window.clearInterval(rotateInterval);
     rotateInterval =
-      window.setInterval(function() { rotateForward(contents); }, 8000);
+      window.setInterval(function() { rotateForward(els); }, 8000);
     return rotateInterval;
   };
 
-  if (contents.length > 1) { autoRotate(); }
+  if (els.length > 1) { autoRotate(); }
 }());
