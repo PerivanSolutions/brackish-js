@@ -11,7 +11,13 @@
   };
 
   rotateBackward = function rotateBackward(nodes) {
-    nodes[0].parentNode.insertBefore(nodes[nodes.length - 1], nodes[0]);
+    // Place the last before the second
+    nodes[0].parentNode.insertBefore(nodes[nodes.length - 1], nodes[1]);
+
+    // Place the first before the third
+    window.setTimeout(function() {
+      nodes[0].parentNode.insertBefore(nodes[0], nodes[2]);
+    }, 100);
   };
 
   autoRotate = function autoRotate() {
