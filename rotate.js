@@ -23,7 +23,8 @@
 
   autoRotate = function autoRotate() {
     window.clearInterval(interval);
-    interval = window.setInterval(function() { rotateForward(); }, 8000);
+    interval = window.setInterval(function() { rotateForward(); },
+        rotateSpeed ? rotateSpeed : 8000);
   };
 
   toggleRotate = function toggleRotate() {
