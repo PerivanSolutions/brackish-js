@@ -1,9 +1,10 @@
 (function() {
   'use strict';
-  var rotateInterval,
-      autoRotate,
+  var autoRotate,
+      toggleRotate,
       rotateForward,
       rotateBackward,
+      interval,
       els = document.getElementsByClassName('js-rotate__content');
 
   rotateForward = function rotateForward() {
@@ -21,10 +22,17 @@
   };
 
   autoRotate = function autoRotate() {
-    window.clearInterval(rotateInterval);
-    rotateInterval =
-      window.setInterval(function() { rotateForward(); }, 8000);
-    return rotateInterval;
+    window.clearInterval(interval);
+    interval = window.setInterval(function() { rotateForward(); }, 8000);
+  };
+
+  toggleRotate = function toggleRotate() {
+    if (interval) {
+      clearInterval(interval);
+      interval = false;
+    } else {
+      autoRotate();
+    }
   };
 
   if (els.length > 1) { autoRotate(); }
